@@ -225,7 +225,6 @@ output "web_app_routing_identity" {
 }
 
 
-output "cluster_identity_principal_id" {
-  description = "The `azurerm_kubernetes_cluster`'s `identity` block."
-  value       = azurerm_kubernetes_cluster.main.identity[0].principal_id
+output "aks_principal_id" {
+  value = azurerm_kubernetes_cluster.main.identity[0].principal_id
 }

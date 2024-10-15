@@ -226,6 +226,6 @@ output "web_app_routing_identity" {
 
 
 output "cluster_identity_principal_id" {
-  description = "The `username` in the `azurerm_kubernetes_cluster`'s `kube_config` block. A username used to authenticate to the Kubernetes cluster."
-  value       = azurerm_kubernetes_cluster.main.identity[0].principal_id
+  description = "The `azurerm_kubernetes_cluster`'s `identity` block."
+  value       = try(azurerm_kubernetes_cluster.main.identity[0].principal_id, null)
 }
